@@ -14,8 +14,8 @@ import {
   type LeaderboardEntry,
   type ChallengeWithProgress,
   type UserStats
-} from "@shared/schema";
-import { db } from "./db";
+} from "../shared/schema.js";
+import { db } from "./db.js";
 import { eq, desc, sql, and, count } from "drizzle-orm";
 
 export interface IStorage {
