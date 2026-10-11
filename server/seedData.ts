@@ -1,5 +1,5 @@
-import { storage } from './storage';
-import { type InsertUser, type InsertChallenge, type InsertEventConfig } from '@shared/schema';
+import { storage } from './storage.js';
+import { type InsertUser, type InsertChallenge, type InsertEventConfig } from '../shared/schema.js';
 
 // Generate 250 pre-defined user credentials
 function generateUserCredentials(): InsertUser[] {

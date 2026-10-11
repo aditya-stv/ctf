@@ -356,3 +356,13 @@ The platform includes built-in monitoring:
 ---
 
 **Ready to host your CTF event? Follow the setup guide above and you'll be running in minutes!**
+## ▲ Deploying to Vercel
+
+The repo includes `vercel.json` and `api/index.ts`. The React client is served as static files and the Express API runs as a serverless function under `/api/*`.
+
+1. Create a hosted PostgreSQL database (e.g. Neon, Supabase, or Vercel Postgres). A `localhost` database will not work on Vercel.
+2. In Vercel → Project → Settings → Environment Variables, set:
+   - `DATABASE_URL` – the hosted database connection string (include `?sslmode=require` if your provider needs SSL)
+   - `JWT_SECRET` – a long random string
+3. Create the tables once from your machine: `DATABASE_URL=<hosted url> npm run db:push`
+4. Redeploy. The first API request seeds the 250 accounts and 22 challenges.

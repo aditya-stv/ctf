@@ -1,9 +1,9 @@
 import type { Express } from "express";
 import { createServer, type Server } from "http";
-import { storage } from "./storage";
-import { authenticateToken, requireAdmin, generateToken, type AuthenticatedRequest } from "./auth";
-import { insertSubmissionSchema, insertChallengeSchema, insertUserSchema, insertEventConfigSchema } from "@shared/schema";
-import { seedDatabase } from "./seedData";
+import { storage } from "./storage.js";
+import { authenticateToken, requireAdmin, generateToken, type AuthenticatedRequest } from "./auth.js";
+import { insertSubmissionSchema, insertChallengeSchema, insertUserSchema, insertEventConfigSchema } from "../shared/schema.js";
+import { seedDatabase } from "./seedData.js";
 
 export async function registerRoutes(app: Express): Promise<Server> {
   // Initialize database with seed data
